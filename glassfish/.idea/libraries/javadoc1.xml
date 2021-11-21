@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javadoc1">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/httpcomponents-client-5.1.2-bin/javadoc" />
+      <root url="file://$USER_HOME$/Downloads/httpcomponents-core-5.1.2-bin/javadoc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

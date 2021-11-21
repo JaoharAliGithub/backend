@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="cars-pu">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>NavidDB01</jta-data-source>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <!--<validation-mode>CALLBACK</validation-mode>-->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://127.0.0.1:3306/test"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="NAMO2021"/>
+            <property name="jakarta.persistence.jdbc.useSsl" value="false"/>
+            <property name="jakarta.persistence.lock.timeout" value="100"/>
+            <property name="jakarta.persistence.query.timeout" value="1000"/>
+
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/cars.sql"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+            <property name="eclipselink.target-database" value="MySQL"/>
+            <property name="eclipselink.connection-pool.jtaDataSource" value="NavidDB01" />
+            <property name="eclipselink.connection-pool.nonJtaDataSource" value="NavidDB01" />
+
+
+            <!-- <property name="eclipselink.logging.level" value="ALL"/>-->
+            <property name="eclipselink.logging.level" value="FINE"/>
+
+            <!--<property name="eclipselink.cache.size.default" value="500"/>-->
+
+            <!-- https://www.eclipse.org/eclipselink/documentation/ -->
+            <!-- https://www.eclipse.org/eclipselink/documentation/3.0/jpa/extensions/persistenceproperties_ref.htm -->
+            <!-- https://docs.oracle.com/middleware/1212/toplink/TLJPA/p_ddl_generation_output_mode.htm#TLJPA1073 -->
+            <!--            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+
+
+        </properties>
+    </persistence-unit>
+</persistence>
